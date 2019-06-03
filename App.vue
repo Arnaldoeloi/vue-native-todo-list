@@ -1,9 +1,32 @@
 <template>
   <view class="container">
-    <text class="text-color-primary">Hello world!</text>
-    </view>
+    <todo-item
+      class="text-container"
+      v-for="todo in todos"
+      :key="todo.text"
+      :item="todo"
+    />
+  </view>
 </template>
- 
+ <script>
+import TodoItem from "./todoItem";
+
+export default {
+  components: {TodoItem},
+   data: function(){
+     return{
+       todos: [
+         { id:1,text: "Learn JavaScript", status:true},
+         { id:2,text: "Lean Vue", status:true},
+         { id:3,text: "Build Something Awesome", status:true}
+       ]
+     }
+   },
+   methods: {
+
+   },
+ }
+ </script>
 <style>
 .container {
   background-color: white;
